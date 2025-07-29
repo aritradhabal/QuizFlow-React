@@ -5,7 +5,7 @@ function Logo() {
     <>  
         <div>
            <div className='flex items-center justify-start ml-4 mt-3 gap-x-1'>
-                <img src='/icons8-thunder-100.png' alt='app logo' className='w-10' />
+                <img src='/thunder.svg' alt='app logo' className='w-15' />
                 <h2 className='font-bold'>QuizFlow</h2>
             </div> 
         </div>
@@ -14,3 +14,4 @@ function Logo() {
 }
 
 export default Logo
+
