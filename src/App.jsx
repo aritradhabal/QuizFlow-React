@@ -1,33 +1,30 @@
 import React, { useState } from 'react'
-import Navbar from './components/navbar/Navbar'
-import Home from './components/home/Home'
-import Sidebar from './components/sidebar/Sidebar'
-import { Routes, Route } from 'react-router-dom'
+import HomePage from './components/HomePage'
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router';
+import RootLayout from './layout/RootLayout';
+import CustomizeLayout from './components/customize/CustomizeLayout';
+import Protected_customizeLayout from './layout/ProtectedLayout';
 
 function App() {
-  const [SideBar, SetSideBar] = useState("Create");
-  const [Focus, setFocus] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
-  const getData = (data) => {
-    setSearchTerm(data);
-  }
-  const getFocus = (data) => {
-    setFocus(data);
-  }
-  
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<RootLayout />}>
+        <Route index element={<HomePage/>}/>
+        <Route path='/create' element={<HomePage/>}/>
+        
+        <Route path='/customize' element={
+          <Protected_customizeLayout>
+            <CustomizeLayout/>
+          </Protected_customizeLayout>
 
+        } />
+        
+
+      </Route>
+    )
+  )
   return (
-    <>
-    <div className='flex'>
-      <div className='basis-1/6'>
-        <Sidebar SideBar={SideBar} SetSideBar={SetSideBar}/>
-      </div>
-        <div className='basis-5/6'>
-          <Navbar Focus={Focus} searchTerm={searchTerm}/>
-          <Home getData={getData} getFocus={getFocus}/> 
-        </div>
-      </div>
-    </>
+      <RouterProvider router={router}/>
   )
 }
 

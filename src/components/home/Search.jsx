@@ -1,23 +1,20 @@
 import React, { useState } from 'react'
 
-function Search({getData, getFocus}) {
-  const [Focus, setFocus] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+function Search({Focus, searchTerm, getsearchTerm, getFocus, getTopic}) {
 
   const handleFocus = () => { 
-    setFocus(true);
     getFocus(true);
   }
-  const handleBlur = () => { 
-    setFocus(false);
+  const handleBlur = () => {
     getFocus(false);
   }
   const handleChange = (e) => {
-    setSearchTerm(e.target.value);
+    getsearchTerm(e.target.value);
   }
   const submit = (e) => {
     e.preventDefault();
-    getData(searchTerm);
+    getsearchTerm(searchTerm);
+    getTopic(false);
   }
 
   return (

@@ -12,30 +12,36 @@ import { Bs2CircleFill } from "react-icons/bs";
 import { Bs3Circle } from "react-icons/bs";
 import { Bs3CircleFill } from "react-icons/bs";
 
+import { BsCheckCircleFill } from "react-icons/bs";
+import { useLocation } from 'react-router';
 
-function Navbar({Focus, searchTerm}) {
 
-  const [Topic, setTopic] = useState(false);
-  const [Customize, setCustomize] = useState(false);
-  const [Generate, setGenerate] = useState(false);
+function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
 
+  const url = useLocation();
   
+
   return (
     <>
       <nav className='bg-white'>
        <ul className='flex justify-evenly items-center rounded-xs my-4 text-black'>
-          <li className='flex items-center gap-x-2'>
-            {searchTerm.length > 4 ?
-              (!Focus ? <Bs1CircleFill className='animation-pulse duration-300 text-pink-500' /> : <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' />)
-              : (Focus ? <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' /> : <Bs1Circle className='transition-all duration-300 text-gray-500'/>)  
-              }
-            Enter Topic
+          <li className='flex items-center justify-center gap-x-2'>
+            {Topic === true ? (
+              searchTerm.length > 4 ?
+                (!Focus ? <Bs1CircleFill className='animation-pulse duration-300 text-pink-500' /> : <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' />)
+                  : (Focus ? <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' /> : <Bs1CircleFill className='transition-all duration-300 text-gray-500'/>)  
+                ) : (<BsCheckCircleFill className='text-pink-500'/>)
+            }
+            {url.pathname=== "/create" || url.pathname === "/" ? <p className='font-semibold'>Enter Topic</p>:<p>Enter Topic</p>}
+            
           </li>
-          <li className='flex items-center gap-x-2'>
-            <Bs2Circle/> Customize
+          <li className='flex items-center justify-center gap-x-2'>
+            <Bs2CircleFill className='transition-all duration-300 text-gray-500'/> 
+            {url.pathname=== "/customize" === true ? <p className='font-semibold'>Customize</p>:<p>Customize</p>}
           </li>
-          <li className='flex items-center gap-x-2'>
-            <Bs3Circle/> Generate
+          <li className='flex items-center justify-center gap-x-2'>
+            <Bs3CircleFill className='transition-all duration-300 text-gray-500'/>
+            {Generate === true ? <p className='font-semibold'>Generate</p>:<p>Generate</p>}
           </li>
        </ul>
       </nav>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineThunderbolt } from "react-icons/ai";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { HiOutlineDocumentSearch } from "react-icons/hi";
@@ -9,8 +9,8 @@ import { RiQuillPenFill } from "react-icons/ri";
 
 
 
-function Sideitems({SideBar, SetSideBar}) {
-    
+function Sideitems() {
+    const [SideBar, SetSideBar] = useState("Create")
     const create=()=>{
         SetSideBar("Create");
     }
