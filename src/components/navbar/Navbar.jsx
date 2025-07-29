@@ -26,7 +26,7 @@ function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
       <nav className='bg-white'>
        <ul className='flex justify-evenly items-center rounded-xs my-4 text-black'>
           <li className='flex items-center justify-center gap-x-2'>
-            {Topic === true ? (
+            {url.pathname=== "/create" || url.pathname === "/" ? (
               searchTerm.length > 4 ?
                 (!Focus ? <Bs1CircleFill className='animation-pulse duration-300 text-pink-500' /> : <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' />)
                   : (Focus ? <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' /> : <Bs1CircleFill className='transition-all duration-300 text-gray-500'/>)  
