@@ -24,15 +24,15 @@ function Sideitems({SideBar, SetSideBar}) {
     <>
         <div className="flex flex-col justify-center gap-y-2 mt-10 px-5">
             <button onClick={create} className={`Create cursor-pointer flex items-center justify-start transition duration-350 gap-x-2 rounded-sm hover:bg-[#E2E8F0] py-1 px-2 ${SideBar === 'Create' ? 'bg-[#FDEDF7] hover:bg-[#FDEDF7]' : ''}`}>
-                {SideBar === 'Create' ? <AiFillThunderbolt className='fill-pink-500'/> : <AiFillThunderbolt className='fill-gray-700'/>}
+                {SideBar === 'Create' ? <AiFillThunderbolt className='fill-pink-500 transition-all duration-350 transform scale-110'/> : <AiFillThunderbolt className='fill-gray-700 transition-all duration-300 transform scale-100 '/>}
                 <p className='font-medium'>Create</p>
             </button>
             <button onClick={activity} className={`Create cursor-pointer flex items-center justify-start transition duration-350 gap-x-2 rounded-sm hover:bg-[#E2E8F0] py-1 px-2 ${SideBar === 'Activity' ? 'bg-[#FDEDF7] hover:bg-[#FDEDF7]' : ''}`}>
-                {SideBar === 'Activity' ? <HiDocumentSearch className='fill-pink-500'/> : <HiDocumentSearch  className=''/>}
+                {SideBar === 'Activity' ? <HiDocumentSearch className='fill-pink-500 transition-all duration-350 transform scale-110'/> : <HiDocumentSearch  className='fill-gray-700 transition-all duration-300 transform scale-100 '/>}
                 <p className='font-medium'>Activity</p>
             </button>
             <button onClick={join} className={`Create cursor-pointer flex items-center justify-start transition duration-350 gap-x-2 rounded-sm hover:bg-[#E2E8F0] py-1 px-2 ${SideBar === 'Join' ? 'bg-[#FDEDF7] hover:bg-[#FDEDF7]' : ''}`}>
-                {SideBar === 'Join' ? <RiQuillPenFill className='fill-pink-500'/> : <RiQuillPenFill className=''/>}
+                {SideBar === 'Join' ? <RiQuillPenFill className='fill-pink-500 transition-all duration-350 transform scale-110'/> : <RiQuillPenFill className='fill-gray-700 transition-all duration-300 transform scale-100 '/>}
                 <p className='font-medium'>Join</p>
             </button>
 
