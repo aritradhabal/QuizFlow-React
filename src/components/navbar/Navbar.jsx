@@ -36,12 +36,16 @@ function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
             
           </li>
           <li className='flex items-center justify-center gap-x-2'>
-            <Bs2CircleFill className='transition-all duration-300 text-gray-500'/> 
+            {url.pathname=== "/customize" === true ? 
+            (<Bs2CircleFill className='transition-all duration-300 text-pink-500'/>): <Bs2CircleFill className='transition-all duration-300 text-gray-500'/>
+             }
             {url.pathname=== "/customize" === true ? <p className='font-semibold'>Customize</p>:<p>Customize</p>}
           </li>
           <li className='flex items-center justify-center gap-x-2'>
-            <Bs3CircleFill className='transition-all duration-300 text-gray-500'/>
-            {Generate === true ? <p className='font-semibold'>Generate</p>:<p>Generate</p>}
+            {url.pathname=== "/generate" === true ? 
+            (<Bs2CircleFill className='transition-all duration-300 text-pink-500'/>): <Bs2CircleFill className='transition-all duration-300 text-gray-500'/>
+             }
+            {url.pathname=== "/generate" ? <p className='font-semibold'>Generate</p>:<p>Generate</p>}
           </li>
        </ul>
       </nav>

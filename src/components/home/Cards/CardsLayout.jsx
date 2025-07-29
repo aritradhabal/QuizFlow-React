@@ -22,14 +22,14 @@ function CardsLayout({emoji, title, desc}) {
 
   return (
     <>
-      <div className="bg-white h-16 w-60 p-2.5 text-sm rounded-md flex items-center justify-start gap-x-2.5 border-1 border-[#E2E8F0] hover:bg-[#ecf0f4] duration-400 cursor-pointer">
+      <div className="bg-white h-16 w-70 p-3 text-sm rounded-md flex items-center justify-start gap-x-2.5 border-1 border-[#E2E8F0] hover:bg-[#ecf0f4] duration-400 cursor-pointer">
          <div>{emoji_element({emoji})}</div>
             <div className='flex flex-col justify-center'>
                 <div className='text-gray-500'>
-                  <p className='w-45 max-h-5 overflow-hidden text-ellipsis whitespace-nowrap'>{title}</p>
+                  <p className='w-55 max-h-5 overflow-hidden text-ellipsis whitespace-nowrap'>{title}</p>
                 </div>
                 <div className='text-black'>
-                  <p className='w-45 max-h-5 overflow-hidden text-ellipsis whitespace-nowrap'>{desc}</p>
+                  <p className='w-55 max-h-5 overflow-hidden text-ellipsis whitespace-nowrap'>{desc}</p>
                 </div>
             </div>
       </div>
