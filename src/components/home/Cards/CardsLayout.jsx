@@ -1,0 +1,40 @@
+import React from 'react'
+import { EmojiProvider, Emoji } from "react-apple-emojis"
+import emojiData from "react-apple-emojis/src/data.json"
+
+
+function CardsLayout({emoji, title, desc}) {
+  const emoji_element = ({emoji}) =>{
+    return (
+        <EmojiProvider data={emojiData}>
+        <Emoji name={emoji} width={25} />
+      </EmojiProvider>
+      )
+  }
+// const CardsLayout = ({emoji, title, desc}) => {
+//   const emoji_element = async ({emoji}) =>{
+//     return (
+//         <EmojiProvider data={emojiData}>
+//         <Emoji name={emoji} width={25} />
+//       </EmojiProvider>
+//       )
+//   }
+
+  return (
+    <>
+      <div className="bg-white h-16 w-60 p-2.5 text-sm rounded-md flex items-center justify-start gap-x-2.5 border-1 border-[#E2E8F0] hover:bg-[#ecf0f4] duration-400 cursor-pointer">
+         <div>{emoji_element({emoji})}</div>
+            <div className='flex flex-col justify-center'>
+                <div className='text-gray-500'>
+                  <p className='w-45 max-h-5 overflow-hidden text-ellipsis whitespace-nowrap'>{title}</p>
+                </div>
+                <div className='text-black'>
+                  <p className='w-45 max-h-5 overflow-hidden text-ellipsis whitespace-nowrap'>{desc}</p>
+                </div>
+            </div>
+      </div>
+    </>
+  )
+}
+
+export default CardsLayout

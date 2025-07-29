@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+
+*{
+    font-family: "Geist";
+    box-sizing: border-box; 
+}
