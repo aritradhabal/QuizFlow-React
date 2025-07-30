@@ -12,7 +12,6 @@ function RootLayout() {
     const getUser_data = (data) => {
       setUser_data(data);
     }
-    console.log(User_data);
 
     //Customize Page
     //Navigation

@@ -134,7 +134,7 @@ function CustomizeLayout() {
           </div>
 
           {/* Reading Material Section */}
-          <div className="space-y-4">
+          <div className="space-y-2">
             <h2 className="font-medium text-gray-700">Include Reading Material <span className={countwords() > 1 ? "text-xs font-normal" : "hidden"}>Word Count: {countwords()} Out of 1200.</span></h2>
             <textarea 
               {...register("material", { maxLength: 1200 })}
@@ -147,7 +147,7 @@ function CustomizeLayout() {
 
 
           {/* Submit Button */}
-          <div className="flex justify-center pt-4">
+          <div className="flex justify-center">
             <button type="submit"
               className="cursor-pointer px-8 py-3 bg-pink-500 text-white font-semibold rounded-md hover:bg-pink-500 transform hover:scale-105 transition-all duration-200 shadow-md hover:shadow-md focus:outline-none" 
               
