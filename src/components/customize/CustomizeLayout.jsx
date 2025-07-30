@@ -105,7 +105,7 @@ function CustomizeLayout() {
               </div>
             </div>
           </div>
-          <div className='font-medium md:absolute fixed top-4 right-4 space-y-1 max-w-xs bg-white border border-[#E2E8F0] px-3 py-2 rounded-md'>
+          <div className={errors.easy || errors.medium || errors.hard || countQuestions() > 30 || watch("easy")<0 || watch("medium")<0 || watch("hard")<0 || errors.formError?.message ? "font-medium md:absolute fixed top-4 right-4 space-y-1 max-w-xs bg-white border border-[#E2E8F0] px-3 py-2 rounded-md" : "hidden"}>
             <p className={errors.easy ? "text-red-500" : "hidden"}>{errors.easy?.message}</p>
             <p className={errors.medium ? "text-red-500 " : "hidden"}>{errors.medium?.message}</p>
             <p className={errors.hard ? "text-red-500" : "hidden"}>{errors.hard?.message}</p>
