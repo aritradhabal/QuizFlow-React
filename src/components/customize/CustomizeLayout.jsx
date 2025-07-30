@@ -60,7 +60,7 @@ function CustomizeLayout() {
         <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-8 space-y-8">
           {/* Number of Questions Section */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-gray-900">Number of Questions <span className={countQuestions() > 0 ? "text-xs font-normal" : "hidden"}>Current: {countQuestions()} Out of 30.</span></h2>
+            <h2 className="font-medium text-gray-900">Number of Questions <span className={countQuestions() > 0 ? "text-xs font-normal" : "hidden"}>Current: {countQuestions()} Out of 30.</span></h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="space-y-2">
@@ -135,7 +135,7 @@ function CustomizeLayout() {
 
           {/* Reading Material Section */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-gray-700">Include Reading Material <span className={countwords() > 1 ? "text-xs font-normal" : "hidden"}>Word Count: {countwords()} Out of 1200.</span></h2>
+            <h2 className="font-medium text-gray-700">Include Reading Material <span className={countwords() > 1 ? "text-xs font-normal" : "hidden"}>Word Count: {countwords()} Out of 1200.</span></h2>
             <textarea 
               {...register("material", { maxLength: 1200 })}
               className="w-full px-4 py-4 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300 resize-none" 
