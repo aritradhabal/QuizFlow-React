@@ -54,10 +54,10 @@ function CustomizeLayout() {
   return (
     <>
 
-    <form onSubmit={handleSubmit(onSubmit)} className="h-full bg-[#F8F8FB] flex items-center justify-center p-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="h-full bg-[#F8F8FB] flex items-center justify-center md:p-4">
       <div className="w-full max-w-2xl">
         
-        <div className="bg-white rounded-2xl shadow-md border border-gray-100 p-8 space-y-8">
+        <div className="bg-white rounded-2xl shadow-md md:border md:border-gray-100 p-8 space-y-8">
           {/* Number of Questions Section */}
           <div className="space-y-4">
             <h2 className="font-medium text-gray-900">Number of Questions <span className={countQuestions() > 0 ? "text-xs font-normal" : "hidden"}>Current: {countQuestions()} Out of 30.</span></h2>
