@@ -6,6 +6,15 @@ import HomePage from '../components/HomePage'
 
 function RootLayout() {
 
+    // Customize Page
+    const [User_data, setUser_data] = useState(NaN);
+
+    const getUser_data = (data) => {
+      setUser_data(data);
+    }
+    console.log(User_data);
+
+    //Customize Page
     //Navigation
     const navigate = useNavigate();
     //Navigation
@@ -45,7 +54,7 @@ function RootLayout() {
           <Sidebar SideBar={SideBar} SetSideBar={SetSideBar}/>
         </div>
         <div className='md:basis-6/7 h-svh w-svw grid grid-rows-[auto_1fr]'>
-          <Navbar Focus={Focus} searchTerm={searchTerm} Topic={Topic} Customize={Customize} Generate={Generate} />
+          <Navbar Focus={Focus} searchTerm={searchTerm} Topic={Topic} Customize={Customize} Generate={Generate} User_data={User_data}/>
             <div className='h-full'> 
               <Outlet context={{
                 Focus,
@@ -55,7 +64,8 @@ function RootLayout() {
                 getTopic,
                 Topic,
                 Customize,
-                Generate
+                Generate,
+                getUser_data
               }}/>
             </div>
         </div>

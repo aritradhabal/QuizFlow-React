@@ -15,6 +15,8 @@ import { Bs3CircleFill } from "react-icons/bs";
 import { BsCheckCircleFill } from "react-icons/bs";
 import { useLocation } from 'react-router';
 
+import { IoArrowBackSharp } from "react-icons/io5";
+
 
 function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
 
@@ -24,7 +26,12 @@ function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
   return (
     <>
       <nav className='text-xs bg-white w-full border-b-1 border-gray-300 md:text-sm lg:text-base'>
+
        <ul className='flex justify-evenly items-center rounded-xs my-4 text-black'>
+
+          <li className={url.pathname=== "/customize" === true ? "fixed":"hidden"}>
+            <button><IoArrowBackSharp/></button>
+          </li>
           <li className='flex items-center justify-center gap-x-2'>
             {url.pathname=== "/create" || url.pathname === "/" ? (
               searchTerm.length > 4 ?
@@ -32,7 +39,8 @@ function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
                   : (Focus ? <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' /> : <Bs1CircleFill className='transition-all duration-300 text-gray-500'/>)  
                 ) : (<BsCheckCircleFill className='text-pink-500'/>)
             }
-            {url.pathname=== "/create" || url.pathname === "/" ? <p className='font-semibold'>Enter Topic</p>:<p>Enter Topic</p>}
+            {url.pathname=== "/create" || url.pathname === "/" ? <p className='font-semibold'>Enter Topic</p>:<p>{searchTerm}</p>}
+
             
           </li>
           <li className='flex items-center justify-center gap-x-2'>
@@ -53,4 +61,4 @@ function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
   )
 }
 
-export default Navbar
+export default Navbar;
