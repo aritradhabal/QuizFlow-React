@@ -57,7 +57,7 @@ function CustomizeLayout() {
     <form onSubmit={handleSubmit(onSubmit)} className="h-full bg-[#F8F8FB] flex items-center justify-center md:p-4">
       <div className="w-full max-w-2xl">
         
-        <div className="bg-white rounded-2xl shadow-md md:border md:border-gray-100 p-8 space-y-8">
+        <div className="bg-white rounded-xl md:border-[#E2E8F0] md:border p-8 space-y-8">
           {/* Number of Questions Section */}
           <div className="space-y-4">
             <h2 className="font-medium text-gray-900">Number of Questions <span className={countQuestions() > 0 ? "text-xs font-normal" : "hidden"}>Current: {countQuestions()} Out of 30.</span></h2>
@@ -105,14 +105,13 @@ function CustomizeLayout() {
               </div>
             </div>
           </div>
-          <div>
+          <div className='font-medium absolute top-4 right-4 space-y-1 max-w-xs bg-white border border-[#E2E8F0] px-3 py-2 rounded-md'>
             <p className={errors.easy ? "text-red-500" : "hidden"}>{errors.easy?.message}</p>
             <p className={errors.medium ? "text-red-500 " : "hidden"}>{errors.medium?.message}</p>
             <p className={errors.hard ? "text-red-500" : "hidden"}>{errors.hard?.message}</p>
             <p className={countQuestions() > 30 ? "text-red-500" : "hidden"}>Keep total questions under 30.</p>
             <p className={watch("easy")<0 || watch("medium")<0 || watch("hard")<0 ? "text-red-500" : "hidden"}>Number of Questions can't be Negative.</p>
             <p className={errors.formError?.message ? "text-red-500" : "hidden"}>{errors.formError?.message}</p>
-
           </div>
           {/* Grade Level and Language */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -149,7 +148,7 @@ function CustomizeLayout() {
           {/* Submit Button */}
           <div className="flex justify-center">
             <button type="submit"
-              className="cursor-pointer px-8 py-3 bg-pink-500 text-white font-semibold rounded-md hover:bg-pink-500 transform hover:scale-105 transition-all duration-200 shadow-md hover:shadow-md focus:outline-none" 
+              className="cursor-pointer px-8 py-3 bg-pink-500 text-white font-semibold rounded-md hover:bg-pink-600 transform transition-all duration-200 focus:outline-none" 
               
             >
               Generate
