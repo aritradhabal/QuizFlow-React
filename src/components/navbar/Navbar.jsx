@@ -26,7 +26,7 @@ function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
   return (
     <>
       <nav className='text-xs bg-white w-full border-b-1 border-gray-300 md:text-sm lg:text-base'>
-        <div className={url.pathname=== "/customize" === true ? "flex justify-center items-center h-fit py-1 gap-x-10 border-b-1 border-b-pink-200":"hidden"}>
+        <div className={url.pathname=== "/customize" === true ? "flex justify-center items-center h-fit py-1 gap-x-10 border-b-1 border-b-[#E2E8F0]":"hidden"}>
             <div className='absolute md:left-1/6 left-2 cursor-pointer flex items-center justify-center gap-x-2'>
               <IoArrowBackSharp/>
               <button className='cursor-pointer'>Back</button>
