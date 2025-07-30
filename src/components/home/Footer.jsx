@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <>
-            <div className='flex items-center justify-between'>
+            <div className='md:flex items-center justify-between hidden'>
                 <div className='m-2 w-fit' >
                     <ul className="flex items-center justify-start gap-x-3 text-gray-500 text-xs">
                         <li className='cursor-pointer'>Support</li>
