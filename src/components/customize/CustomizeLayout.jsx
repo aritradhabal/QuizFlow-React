@@ -2,11 +2,18 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 
 export default function CustomizeLayout() {
-  const { register, handleSubmit, formState: { errors }, subscribe} = useForm();
+  const { register, handleSubmit, formState: { errors }, watch} = useForm({
+    defaultValues: {
+      grade: "Undergraduate",
+      language: "English",
+      material: "",
+    }
+  });
   
   const onSubmit = (data) => {
     console.log(data);
   }
+  console.log(watch(["easy", "medium", "hard"]));
   
   return (
     <>
@@ -22,17 +29,16 @@ export default function CustomizeLayout() {
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">Easy</label>
                 <input 
-                  {...register("easy", { required: true, min: 0, max: 10, valueAsNumber: true })} 
+                  {...register("easy", { required :{ value:true, message:"Specify Number of Easy Questions"}, min: 0, max: 10, valueAsNumber: true })} 
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300" 
                   type="number" 
                   placeholder="0-10"
                 />
               </div>
-              
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">Medium</label>
                 <input 
-                  {...register("medium", { required: true, min: 0, max: 10, valueAsNumber: true })}
+                  {...register("medium", { required :{ value:true, message:"Specify Number of Medium Questions"}, min: 0, max: 10, valueAsNumber: true })}
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300" 
                   type="number" 
                   placeholder="0-10"
@@ -42,7 +48,7 @@ export default function CustomizeLayout() {
               <div className="space-y-2">
                 <label className="text-sm font-medium text-gray-700">Hard</label>
                 <input 
-                  {...register("hard", { required: true, min: 0, max: 10, valueAsNumber: true })}
+                  {...register("hard", { required :{ value:true, message:"Specify Number of Hard Questions"}, min: 0, max: 10, valueAsNumber: true })}
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all duration-200 hover:border-gray-300" 
                   type="number" 
                   placeholder="0-10"
@@ -80,6 +86,7 @@ export default function CustomizeLayout() {
               placeholder="Paste your reading material here... (optional, max 1200 characters)"
             />
           </div>
+          
 
           {/* Submit Button */}
           <div className="flex justify-center pt-4">
@@ -90,6 +97,9 @@ export default function CustomizeLayout() {
               Generate Quiz ✨
             </button>
           </div>
+          <p className={errors.easy ? "text-red-500" : "hidden"}>{errors.easy?.message}</p>
+          <p className={errors.medium ? "text-red-500" : "hidden"}>{errors.medium?.message}</p>
+          <p className={errors.hard ? "text-red-500" : "hidden"}>{errors.hard?.message}</p>
         </div>
         
       </div>
