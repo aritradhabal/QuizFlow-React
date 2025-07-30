@@ -52,8 +52,8 @@ function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
           </li>
 
           <li className='flex items-center justify-center gap-x-2'>
-            {url.pathname=== "/customize" === true ? 
-            (<Bs2CircleFill className='animate-pulse duration-300 text-pink-500'/>): <Bs2CircleFill className='transition-all duration-300 text-gray-500'/>
+            {Customize === true && url.pathname=== "/customize" === true ? 
+            (<Bs2CircleFill className='animate-pulse duration-300 text-pink-500'/>): Generate === true ? <BsCheckCircleFill className='text-pink-500' /> : (<Bs2CircleFill className='transition-all duration-300 text-gray-500'/>)
              }
             {url.pathname=== "/customize" === true ? <p className='font-semibold'>Customize</p>:<p>Customize</p>}
           </li>

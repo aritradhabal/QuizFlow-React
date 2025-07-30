@@ -1,11 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState} from 'react';
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { useOutletContext } from 'react-router'
+import { set, useForm } from 'react-hook-form';
+import { useOutletContext , useBlocker} from 'react-router'
 
 
 
 function CustomizeLayout() {
+
   const {getUser_data} =  useOutletContext();
 
   const { register, handleSubmit, setError, clearErrors, formState: { errors }, watch} = useForm();
@@ -41,7 +42,6 @@ function CustomizeLayout() {
     if (Number.isNaN(data.hard)) {
       data.hard=0
     }
-
     getUser_data(data);
   }
   

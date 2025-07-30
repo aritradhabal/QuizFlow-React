@@ -1,22 +1,16 @@
 import {React, useState} from 'react'
-import { Outlet, useNavigate } from 'react-router'
+import { Outlet, useBlocker, useNavigate } from 'react-router'
 import Navbar from '../components/navbar/Navbar'
 import Sidebar from '../components/sidebar/Sidebar'
 import HomePage from '../components/HomePage'
 
 function RootLayout() {
+  
 
-    // Customize Page
-    const [User_data, setUser_data] = useState(NaN);
-
-    const getUser_data = (data) => {
-      setUser_data(data);
-    }
-
-    //Customize Page
 
     //Navigation
     const navigate = useNavigate();
+    
     //Navigation
 
     //Sidebar
@@ -46,6 +40,19 @@ function RootLayout() {
       setSearchTerm(data);
     }
     // Search
+    // Customize Page
+    const [User_data, setUser_data] = useState(NaN);
+
+    const getUser_data = (data) => {
+      setUser_data(data);
+      setGenerate(true);
+      setCustomize(false);
+      
+      console.log(data);
+      navigate('/generate');
+    }
+
+    //Customize Page
 
   return (
     <>
