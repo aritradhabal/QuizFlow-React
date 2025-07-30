@@ -23,7 +23,7 @@ function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
 
   return (
     <>
-      <nav className='bg-white w-full border-b-1 border-gray-300 hidden md:block'>
+      <nav className='text-xs bg-white w-full border-b-1 border-gray-300 md:text-sm lg:text-base'>
        <ul className='flex justify-evenly items-center rounded-xs my-4 text-black'>
           <li className='flex items-center justify-center gap-x-2'>
             {url.pathname=== "/create" || url.pathname === "/" ? (
