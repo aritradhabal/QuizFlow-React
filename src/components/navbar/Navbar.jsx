@@ -19,7 +19,9 @@ import { IoArrowBackSharp } from "react-icons/io5";
 
 
 function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
+  
   const navigate = useNavigate();
+
   const goHome = () => {
     navigate('/');
   }

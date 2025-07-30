@@ -14,6 +14,7 @@ function RootLayout() {
     }
 
     //Customize Page
+
     //Navigation
     const navigate = useNavigate();
     //Navigation
@@ -29,8 +30,8 @@ function RootLayout() {
 
     const getTopic = (data) => {
       setTopic(data);
-      setCustomize(!data)
-      navigate('/customize')
+      setCustomize(!data);
+      navigate('/customize');
     }
     //Navbar
 

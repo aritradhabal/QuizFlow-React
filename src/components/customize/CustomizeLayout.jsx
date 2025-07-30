@@ -6,7 +6,7 @@ import { useOutletContext } from 'react-router'
 
 
 function CustomizeLayout() {
-  const {getUser_data, searchTerm} =  useOutletContext();
+  const {getUser_data} =  useOutletContext();
 
   const { register, handleSubmit, setError, clearErrors, formState: { errors }, watch} = useForm();
   
