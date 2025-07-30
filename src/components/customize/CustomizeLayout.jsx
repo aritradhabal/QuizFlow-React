@@ -50,7 +50,7 @@ function CustomizeLayout() {
   useEffect(() => {
     if (countQuestions() >= 0) {
       clearErrors("formError");
-  }
+    }
   }, [watch("easy"), watch("medium"), watch("hard")]);
 
   return (
@@ -60,7 +60,7 @@ function CustomizeLayout() {
       <div className="w-full max-w-2xl">
         
         <div className="bg-white rounded-xl md:border-[#E2E8F0] md:border p-8 space-y-8">
-          {/* Number of Questions Section */}
+         
           <div className="space-y-4">
             <h2 className="font-medium text-gray-900">Number of Questions <span className={countQuestions() > 0 ? "text-xs font-normal" : "hidden"}>Current: {countQuestions()} Out of 30.</span></h2>
 
@@ -119,7 +119,7 @@ function CustomizeLayout() {
             <p className={watch("easy")<0 || watch("medium")<0 || watch("hard")<0 ? "text-red-500" : "hidden"}>Number of Questions can't be Negative.</p>
             <p className={errors.formError?.message ? "text-red-500" : "hidden"}>{errors.formError?.message}</p>
           </div>
-          {/* Grade Level and Language */}
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-700">Grade Level</label>
@@ -138,7 +138,7 @@ function CustomizeLayout() {
             </div>
           </div>
 
-          {/* Reading Material Section */}
+          
           <div className="space-y-2">
             <h2 className="font-medium text-gray-700">Include Reading Material <span className={countwords() > 1 ? "text-xs font-normal" : "hidden"}>Word Count: {countwords()} Out of 1200.</span></h2>
             <textarea 
@@ -151,7 +151,7 @@ function CustomizeLayout() {
           
 
 
-          {/* Submit Button */}
+        
           <div className="flex justify-center">
             <button type="submit"
               className="cursor-pointer px-8 py-3 bg-pink-500 text-white font-semibold rounded-md hover:bg-pink-600 transform transition-all duration-200 focus:outline-none" 
