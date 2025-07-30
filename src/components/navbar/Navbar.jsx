@@ -26,23 +26,25 @@ function Navbar({Focus, searchTerm, Topic, Customize, Generate}) {
   return (
     <>
       <nav className='text-xs bg-white w-full border-b-1 border-gray-300 md:text-sm lg:text-base'>
-
-       <ul className='flex justify-evenly items-center rounded-xs my-4 text-black'>
-
-          <li className={url.pathname=== "/customize" === true ? "fixed":"hidden"}>
-            <button><IoArrowBackSharp/></button>
+        <div className={url.pathname=== "/customize" === true ? "flex justify-center items-center h-fit py-1 gap-x-10 border-b-1 border-b-pink-200":"hidden"}>
+            <div className='absolute md:left-1/6 left-2 cursor-pointer flex items-center justify-center gap-x-2'>
+              <IoArrowBackSharp/>
+              <button className='cursor-pointer'>Back</button>
+            </div>
+            <p className='font-bold'>{searchTerm}</p>
+        </div>
+       <ul className='flex justify-evenly items-center rounded-xs my-4 text-black '>
+          
+            <li className='flex items-center justify-center gap-x-2'>
+              {url.pathname=== "/create" || url.pathname === "/" ? (
+                searchTerm.length > 4 ?
+                  (!Focus ? <Bs1CircleFill className='animation-pulse duration-300 text-pink-500' /> : <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' />)
+                    : (Focus ? <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' /> : <Bs1CircleFill className='transition-all duration-300 text-gray-500'/>)  
+                  ) : (<BsCheckCircleFill className='text-pink-500'/>)
+              }
+              {url.pathname=== "/create" || url.pathname === "/" ? <p className='font-semibold'>Enter Topic</p>:<p>Enter Topic</p>}
           </li>
-          <li className='flex items-center justify-center gap-x-2'>
-            {url.pathname=== "/create" || url.pathname === "/" ? (
-              searchTerm.length > 4 ?
-                (!Focus ? <Bs1CircleFill className='animation-pulse duration-300 text-pink-500' /> : <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' />)
-                  : (Focus ? <Bs1CircleFill className=' animate-pulse duration-300 text-pink-500' /> : <Bs1CircleFill className='transition-all duration-300 text-gray-500'/>)  
-                ) : (<BsCheckCircleFill className='text-pink-500'/>)
-            }
-            {url.pathname=== "/create" || url.pathname === "/" ? <p className='font-semibold'>Enter Topic</p>:<p>{searchTerm}</p>}
 
-            
-          </li>
           <li className='flex items-center justify-center gap-x-2'>
             {url.pathname=== "/customize" === true ? 
             (<Bs2CircleFill className='transition-all duration-300 text-pink-500'/>): <Bs2CircleFill className='transition-all duration-300 text-gray-500'/>
