@@ -7,7 +7,7 @@ import CardsLayout from './Cards/CardsLayout'
 function Cards() {
   return (
     <>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-2 md:gap-2 lg:gap-3 justify-items-center max-w-full mx-auto max-h-1/5 md:max-h-95 overflow-y-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-2 md:gap-2 lg:gap-3 justify-items-center max-w-full mx-auto max-h-90 md:max-h-95 overflow-y-auto">
                 <CardsLayout emoji="plus" title="Mathematics" desc="Calculus and Algebra"/>
                 <CardsLayout emoji="laptop" title="Computer Science" desc="Data Structures and Algorithms"/>
                 <CardsLayout emoji="robot" title="Artificial Intelligence" desc="Machine Learning Basics"/>
