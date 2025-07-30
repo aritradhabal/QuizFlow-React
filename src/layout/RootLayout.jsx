@@ -40,22 +40,24 @@ function RootLayout() {
 
   return (
     <>
-      <div className='flex'>
-        <div className='basis-1/6'>
+      <div className='md:flex md:flex-row flex flex-col'>
+        <div className='md:basis-1/7 md:relative md:w-auto w-svw fixed bottom-0'>
           <Sidebar SideBar={SideBar} SetSideBar={SetSideBar}/>
         </div>
-        <div className='basis-5/6'>
+        <div className='md:basis-6/7 h-svh w-svw grid grid-rows-[auto_1fr]'>
           <Navbar Focus={Focus} searchTerm={searchTerm} Topic={Topic} Customize={Customize} Generate={Generate} />
-          <Outlet context={{
-            Focus,
-            searchTerm,
-            getsearchTerm,
-            getFocus,
-            getTopic,
-            Topic,
-            Customize,
-            Generate
-          }}/> 
+            <div className='h-full'> 
+              <Outlet context={{
+                Focus,
+                searchTerm,
+                getsearchTerm,
+                getFocus,
+                getTopic,
+                Topic,
+                Customize,
+                Generate
+              }}/>
+            </div>
         </div>
       </div>
     </>

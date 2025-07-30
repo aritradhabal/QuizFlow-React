@@ -15,9 +15,9 @@ function Top() {
 
     <>
       
-       <div className='border-t-1 border-gray-300 flex flex-col'>
+       <div className='flex flex-col my-10'>
 
-          <div className='flex flex-col items-center-safe my-15'>
+          <div className='flex flex-col items-center-safe'>
             <p className="flex items-center gap-x-0.5 text-black font-semibold">Create a quiz in seconds <span>{emoji_element()}</span></p>
             <p className='text-gray-600'>Enter a learning topic to get started</p>
           </div>
