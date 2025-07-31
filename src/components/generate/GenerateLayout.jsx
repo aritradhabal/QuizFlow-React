@@ -2,22 +2,23 @@ import React from 'react'
 import { useState } from 'react';
 import { useOutletContext, useBlocker } from 'react-router-dom';
 
-function GenerateLayout() {
+function GenerateLayout({data}) {
     useBlocker(false);
 
-    const question="Which character in 'Animal Farm' represents the working class?"
-    const index = 1
-    const answerA="Boxer"
-    const answerB="Squealer"
-    const answerC="Snowball"
-    const answerD="Napoleon"
-    const correctAnswer=1
+
+    const question= data.question || "Hi character in 'Animal Farm' represents the working class?"
+    const index = data.index +1 || 1
+    const answerA= data.answerA || "Boxer"
+    const answerB= data.answerB || "Squealer"
+    const answerC= data.answerC || "Snowball"
+    const answerD= data.answerD || "Napoleon"
+    const correctAnswer= data.correctAnswer || 0
 
 
     
   return (
     <>
-        <div className="mt-10 w-full max-w-3xl mx-auto bg-white rounded-md border border-[#E2E8F0] p-4 sm:p-4 lg:p-6">
+        <div className="w-full max-w-3xl mx-auto bg-white rounded-md border border-[#E2E8F0] p-4 sm:p-4 lg:p-6">
       {/* Question */}
       <div className="mb-2">
         <h2 className="text-base sm:text-lg font-medium text-gray-900 mb-2 sm:mb-2 leading-relaxed">

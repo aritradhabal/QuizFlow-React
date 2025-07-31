@@ -18,14 +18,6 @@ function CardsLayout({emoji, title, desc}) {
     getsearchTerm(desc);
     getTopic(false);
   }
-// const CardsLayout = ({emoji, title, desc}) => {
-//   const emoji_element = async ({emoji}) =>{
-//     return (
-//         <EmojiProvider data={emojiData}>
-//         <Emoji name={emoji} width={25} />
-//       </EmojiProvider>
-//       )
-//   }
 
   return (
     <>

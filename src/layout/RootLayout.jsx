@@ -2,7 +2,7 @@ import {React, useState} from 'react'
 import { Outlet, useBlocker, useNavigate } from 'react-router'
 import Navbar from '../components/navbar/Navbar'
 import Sidebar from '../components/sidebar/Sidebar'
-import HomePage from '../components/HomePage'
+import Home from '../components/Home'
 
 function RootLayout() {
   
@@ -51,30 +51,30 @@ function RootLayout() {
       console.log(data);
       navigate('/generate');
     }
-
+    
     //Customize Page
 
   return (
     <>
-      <div className='md:flex md:flex-row flex flex-col'>
-        <div className='md:basis-1/7 md:relative md:w-auto w-svw fixed bottom-0'>
+      <div className='body-setup'>
+        <div className='dashboard-navbar'>
+          <Navbar Focus={Focus} searchTerm={searchTerm} Topic={Topic} Customize={Customize} Generate={Generate} User_data={User_data}/>
+        </div>
+        <div className='dashboard-sidebar'>
           <Sidebar SideBar={SideBar} SetSideBar={SetSideBar}/>
         </div>
-        <div className='md:basis-6/7 h-svh w-svw grid grid-rows-[auto_1fr]'>
-          <Navbar Focus={Focus} searchTerm={searchTerm} Topic={Topic} Customize={Customize} Generate={Generate} User_data={User_data}/>
-            <div className='h-full'> 
-              <Outlet context={{
-                Focus,
-                searchTerm,
-                getsearchTerm,
-                getFocus,
-                getTopic,
-                Topic,
-                Customize,
-                Generate,
-                getUser_data
-              }}/>
-            </div>
+        <div className='dashboard-main'> 
+          <Outlet context={{
+            Focus,
+            searchTerm,
+            getsearchTerm,
+            getFocus,
+            getTopic,
+            Topic,
+            Customize,
+            Generate,
+            getUser_data,
+          }}/>
         </div>
       </div>
     </>

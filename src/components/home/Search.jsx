@@ -15,6 +15,7 @@ function Search({Focus, searchTerm, getsearchTerm, getFocus, getTopic}) {
     e.preventDefault();
     getsearchTerm(searchTerm);
     getTopic(false);
+    
   }
 
   return (

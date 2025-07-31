@@ -56,7 +56,7 @@ function CustomizeLayout() {
   return (
     <>
 
-    <form onSubmit={handleSubmit(onSubmit)} className="h-full bg-[#F8F8FB] flex items-center justify-center md:p-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="min-h-[calc(100svh-6.25rem)] overflow-y-auto flex items-center justify-center">
       <div className="w-full max-w-2xl">
         
         <div className="bg-white rounded-xl md:border-[#E2E8F0] md:border p-8 space-y-8">

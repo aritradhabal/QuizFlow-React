@@ -5,3 +5,72 @@
     font-family: "Geist";
     box-sizing: border-box; 
 }
+.body-setup{
+    min-height: 100svh;
+    min-width: 100svw;
+    min-block-size: 100svh;
+    min-block-size: 100svh;
+    display: grid;
+    grid-template-columns: 12.5rem 1fr;
+    grid-template-rows: auto 1fr;
+
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+    
+}
+
+
+.dashboard-navbar{
+    grid-area: header;
+    position: sticky;
+    top: 0;
+}
+.dashboard-main {
+  grid-area: main;
+  background-color: #F8F8FB;
+}
+.dashboard-sidebar {
+  position: sticky;
+  height: 100svh;
+  grid-area: sidebar; 
+}
+
+
+
+.sidebar-conf{
+    display:flex;
+    flex-direction: column;
+
+}
+
+@media screen and (max-width: 768px){
+
+    .body-setup{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+
+        grid-template-areas:
+        "header"
+        "main"
+        "sidebar";
+    }
+    
+    .dashboard-sidebar {
+        position: sticky;
+        bottom:0;
+        width: 100svw;
+        grid-area: sidebar;
+        height: auto;
+        padding-top: 2;
+        padding-bottom: 2;
+
+    }
+    .sidebar-conf{
+        
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
